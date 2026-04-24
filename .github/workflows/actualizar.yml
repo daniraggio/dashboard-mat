@@ -19,7 +19,7 @@ jobs:
       - name: Instalar dependencias
         run: pip install pandas openpyxl
       - name: Generar dashboard
-        run: python generar_dashboard.py
+        run: python3 generar_dashboard.py
       - name: Publicar en GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
