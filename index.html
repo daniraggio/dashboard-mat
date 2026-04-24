@@ -1,0 +1,38 @@
+# Dashboard — Contratos de Energía CAMMESA
+
+Dashboard interactivo para analizar contratos MATE publicados por CAMMESA.
+
+## 🌐 Ver dashboard
+👉 **https://daniraggio.github.io/dashboard-mat**
+
+## 🔄 Cómo actualizar los datos
+
+1. Entrá a [CAMMESA MEMNET](https://memnet.cammesa.com/Comercial/Declaraciones/Contratos/MATE/MATE-Publicaciones/) con tu usuario
+2. Descargá los 5 archivos Excel
+3. Subílos a la carpeta `data/` de este repositorio (reemplazando los anteriores)
+4. GitHub Actions regenera el dashboard automáticamente en ~1 minuto
+
+### Nombres de archivos esperados
+```
+data/
+├── CONTRATOS.xlsx
+├── TOPES.xlsx
+├── CARACTERÍSTICAS.xlsx
+├── PARÁMETROS_VARIABLES.xlsx
+└── Generador_por_conjunto.xlsx
+```
+
+## ⚙️ Cómo subir los archivos Excel
+
+**Opción A — desde GitHub.com (más fácil):**
+1. Entrá a la carpeta `data/` en el repo
+2. Click en **Add file → Upload files**
+3. Arrastrá los 5 Excel
+4. Click en **Commit changes**
+
+**Opción B — desde la terminal:**
+```bash
+git add data/*.xlsx
+git commit -m "Actualizar datos"
+git push
+```

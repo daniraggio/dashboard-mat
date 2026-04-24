@@ -1,0 +1,34 @@
+name: Actualizar Dashboard
+
+on:
+  push:
+    paths:
+      - 'data/**.xlsx'   # se dispara solo cuando subís Excel nuevos
+  workflow_dispatch:     # también podés correrlo manualmente desde GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install pandas openpyxl
+
+      - name: Generar dashboard
+        run: python generar_dashboard.py
+
+      - name: Publicar en GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages
+          include_files: index.html
