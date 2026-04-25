@@ -82,7 +82,7 @@ print("Leyendo archivos Excel...")
 
 contratos   = pd.read_excel(DATA_DIR / "CONTRATOS.xlsx")
 generadores = pd.read_excel(DATA_DIR / "Generador_por_conjunto.xlsx")
-params      = pd.read_excel(DATA_DIR / "PARÁMETROS_VARIABLES.xlsx")
+params      = pd.read_excel(DATA_DIR / "PARAMETROS_VARIABLES.xlsx")
 topes       = pd.read_excel(DATA_DIR / "TOPES.xlsx")
 
 today = pd.Timestamp("today").normalize()
